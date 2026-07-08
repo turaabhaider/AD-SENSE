@@ -1,40 +1,47 @@
-import { Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
+// Components
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Pillars from './components/Pillars';
+import Guides from './components/Guides';
+import Tools from './components/Tools';
+import CTA from './components/CTA';
+import Footer from './components/Footer';
 
-export default function Footer() {
+// Pages
+import About from './pages/About';
+import EditorialStandards from './pages/EditorialStandards';
+import Contact from './pages/Contact';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import Disclaimer from './pages/Disclaimer';
+
+export default function App() {
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-grid">
-          <div>
-            <div className="footer-logo">Ledger <span>&</span> Compass</div>
-            <p className="footer-desc">Independent personal finance publishing. Free from affiliate kickbacks, lender partnerships, or financial product promotion.</p>
-          </div>
-          <div className="footer-col">
-            <h4>Company</h4>
-            <ul>
-              <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/editorial-standards">Editorial Standards</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h4>Legal</h4>
-            <ul>
-              <li><Link to="/privacy">Privacy Policy</Link></li>
-              <li><Link to="/terms">Terms of Service</Link></li>
-              <li><Link to="/disclaimer">Financial Disclaimer</Link></li>
-            </ul>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <div>&copy; 2026 Ledger & Compass Media, Inc. All rights reserved.</div>
-          <div className="footer-legal">
-            <Link to="/privacy">Privacy</Link>
-            <Link to="/terms">Terms</Link>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <>
+      <Header />
+      <Routes>
+        {/* Home Page Route - Renders all sections */}
+        <Route path="/" element={
+          <main>
+            <Hero />
+            <Pillars />
+            <Guides />
+            <Tools />
+            <CTA />
+          </main>
+        } />
+        
+        {/* Footer Subpages Routes */}
+        <Route path="/about" element={<About />} />
+        <Route path="/editorial-standards" element={<EditorialStandards />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/disclaimer" element={<Disclaimer />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
