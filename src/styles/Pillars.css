@@ -6,31 +6,34 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 .section-header h2 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   margin-top: 0.5rem;
 }
 .section-header p {
   color: #64748B;
   max-width: 400px;
   font-size: 0.95rem;
+  text-align: right;
 }
+
+/* Hairline Grid Trick for ultra-clean lines */
 .pillars-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-light);
+  border: 1px solid var(--border-light);
 }
 .pillar-card {
-  padding: 3rem 2rem;
-  border: 1px solid var(--border-light);
-  margin-right: -1px;
-  margin-bottom: -1px;
+  background: var(--bg-ivory);
+  padding: 3rem 2.5rem;
   transition: background var(--transition-smooth);
 }
-.pillar-card:hover {
-  background: rgba(255,255,255,0.4);
-}
+.pillar-card:hover { background: #fdfbf7; }
+
 .pillar-num {
   font-size: 0.8rem;
   color: var(--accent-gold);
@@ -47,10 +50,18 @@
   margin-bottom: 2rem;
   min-height: 80px;
 }
+
 @media (max-width: 1024px) {
   .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+  .pillar-card p { min-height: auto; }
 }
 @media (max-width: 768px) {
+  .section-header { 
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 1rem; 
+  }
+  .section-header p { text-align: left; }
   .pillars-grid { grid-template-columns: 1fr; }
-  .section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .pillar-card { padding: 2rem 1.5rem; }
 }
