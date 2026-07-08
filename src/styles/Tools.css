@@ -6,29 +6,29 @@
   gap: 4rem;
 }
 .tools-intro h2 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   margin: 1rem 0;
 }
-.tools-intro p {
-  color: #475569;
-}
+.tools-intro p { color: #475569; }
+
+/* Hairline Grid Trick */
 .tools-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
+  gap: 1px;
+  background: var(--border-light);
+  border: 1px solid var(--border-light);
 }
 .tool-link {
+  background: var(--bg-ivory);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  border: 1px solid var(--border-light);
-  margin-right: -1px;
-  margin-bottom: -1px;
   transition: all var(--transition-smooth);
 }
 .tool-link:hover {
-  background: rgba(255,255,255,0.5);
+  background: #fdfbf7;
   padding-left: 2.5rem;
 }
 .tool-info h4 {
@@ -37,14 +37,17 @@
   margin-bottom: 0.25rem;
 }
 .tool-info span {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #64748B;
 }
+
 @media (max-width: 1024px) {
-  .tools { grid-template-columns: 1fr; gap: 2rem; }
+  .tools { grid-template-columns: 1fr; gap: 2.5rem; }
 }
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .tools-grid { grid-template-columns: 1fr; }
+  .tool-link { padding: 1.5rem; }
+  .tool-link:hover { padding-left: 2rem; }
 }

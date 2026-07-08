@@ -8,8 +8,12 @@
   gap: 4rem;
 }
 .guide-card {
+  border-top: 2px solid var(--text-navy); /* Bold top line */
   border-bottom: 1px solid var(--border-light);
-  padding-bottom: 2rem;
+  padding: 1.5rem 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .guide-meta {
   display: flex;
@@ -17,19 +21,24 @@
   margin-bottom: 1rem;
 }
 .guide-card h3 {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   margin-bottom: 1rem;
 }
 .guide-card p {
   color: #475569;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  flex-grow: 1;
 }
 .guide-author {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #64748B;
+  border-top: 1px solid var(--border-light);
+  padding-top: 1rem;
 }
-@media (max-width: 1024px) {
+
+@media (max-width: 992px) {
   .guides-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .guide-card { padding: 1.5rem 0; }
 }
