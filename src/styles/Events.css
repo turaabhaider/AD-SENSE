@@ -1,0 +1,41 @@
+.events-section {
+  padding: 5rem 0;
+  border-top: 1px solid var(--border-light);
+}
+.table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  background: #fff;
+}
+.events-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+.events-table th, .events-table td {
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid var(--border-light);
+  white-space: nowrap;
+}
+.events-table th {
+  background: #f8fafc;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #64748B;
+  font-weight: 600;
+}
+.events-table tbody tr:last-child td { border-bottom: none; }
+.events-table tbody tr:hover { background: #fdfbf7; }
+.events-table a { color: var(--accent-gold); font-weight: 500; text-decoration: underline; }
+.events-table a:hover { color: var(--text-navy); }
+.acc-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.acc-badge.inc { background: var(--text-navy); color: var(--bg-ivory); }
+.acc-badge.exc { background: #e2e8f0; color: #475569; }
