@@ -4,13 +4,20 @@ import '../styles/CTA.css';
 export default function CTA() {
   const revealRef = useReveal();
 
+  const handleStart = () => {
+    const element = document.getElementById('foundations');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
-    <section className="container reveal" ref={revealRef}>
+    <section className="container reveal" id="roadmap" ref={revealRef}>
       <div className="cta">
-        <span className="label">Start Here</span>
-        <h2>New to personal finance? Start with the seven-step roadmap.</h2>
-        <p>A single page that walks you from your first paycheck to a fully funded retirement, in the right order. No email required. Bookmark it — it won't change next month.</p>
-        <button className="btn btn-primary">Open the Roadmap &rarr;</button>
+        <span className="label">The Roadmap</span>
+        <h2>New to personal finance? Start with our step-by-step framework.</h2>
+        <p>A single clear framework that guides you from your first paycheck to financial independence in the correct order. Free forever with no account required.</p>
+        <button className="btn btn-primary" onClick={handleStart}>Back to Foundations &uarr;</button>
       </div>
     </section>
   );
