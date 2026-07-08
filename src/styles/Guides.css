@@ -1,0 +1,35 @@
+.guides {
+  padding: 5rem 0;
+  border-top: 1px solid var(--border-light);
+}
+.guides-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+.guide-card {
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 2rem;
+}
+.guide-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.guide-card h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.guide-card p {
+  color: #475569;
+  margin-bottom: 1.5rem;
+}
+.guide-author {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #64748B;
+}
+@media (max-width: 1024px) {
+  .guides-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
