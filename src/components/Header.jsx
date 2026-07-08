@@ -1,13 +1,21 @@
 import '../styles/Header.css';
 
 export default function Header() {
+  const handleScroll = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <>
       <div className="top-bar">
         <div className="container top-bar-content">
           <span>The Evergreen Library</span>
-          <span className="top-bar-center">Timeless personal-finance guides · Read in any order · Free forever</span>
-          <span>140+ Guides</span>
+          <span className="top-bar-center">Timeless personal-finance guides · Free & Independent</span>
+          <span>140+ Reference Guides</span>
         </div>
       </div>
       <header className="main-header">
@@ -21,12 +29,11 @@ export default function Header() {
             <div className="header-meta right">Free · No<br />Signup</div>
           </div>
           <nav className="main-nav">
-            <a href="#mortgages">Mortgages</a>
-            <a href="#insurance">Insurance</a>
-            <a href="#investing">Investing</a>
-            <a href="#credit">Credit</a>
-            <a href="#retirement">Retirement</a>
-            <a href="#taxes">Taxes</a>
+            <a href="#foundations" onClick={(e) => handleScroll(e, 'foundations')}>Foundations</a>
+            <a href="#pillars" onClick={(e) => handleScroll(e, 'pillars')}>Six Pillars</a>
+            <a href="#guides" onClick={(e) => handleScroll(e, 'guides')}>Guides</a>
+            <a href="#tools" onClick={(e) => handleScroll(e, 'tools')}>Tools</a>
+            <a href="#roadmap" onClick={(e) => handleScroll(e, 'roadmap')}>Roadmap</a>
           </nav>
         </div>
       </header>
