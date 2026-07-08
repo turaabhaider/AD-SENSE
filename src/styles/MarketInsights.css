@@ -1,0 +1,48 @@
+.insights {
+  padding: 5rem 0;
+  border-top: 1px solid var(--border-light);
+}
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-light);
+  border: 1px solid var(--border-light);
+}
+.insight-card {
+  background: var(--bg-ivory);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.insight-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.insight-card h3 {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  margin: 0;
+}
+.trend-badge {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-weight: 600;
+}
+.trend-badge.bullish { background: #dcfce7; color: #166534; }
+.trend-badge.neutral { background: #f1f5f9; color: #475569; }
+.trend-badge.cooling { background: #fee2e2; color: #991b1b; }
+.insight-card p {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .insights-grid { grid-template-columns: 1fr; }
+}
