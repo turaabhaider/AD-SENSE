@@ -11,36 +11,34 @@
   justify-content: space-between;
   align-items: center;
 }
-.top-bar-center {
-  color: var(--accent-gold);
-}
+.top-bar-center { color: var(--accent-gold); }
+
 .main-header {
   position: sticky;
   top: 0;
   z-index: 100;
   background: rgba(247, 243, 235, 0.95);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-light);
-  padding: 2rem 0 0 0;
+  padding: 1.5rem 0 0 0;
 }
 .header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 .header-meta {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #64748B;
   width: 150px;
 }
-.header-meta.right {
-  text-align: right;
-}
+.header-meta.right { text-align: right; }
+
 .logo h1 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   letter-spacing: -0.02em;
   text-align: center;
 }
@@ -51,18 +49,19 @@
 }
 .logo-sub {
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: var(--accent-gold);
   margin-top: 0.5rem;
 }
+
 .main-nav {
   display: flex;
   justify-content: center;
   gap: 3rem;
   border-top: 1px solid var(--border-light);
-  padding: 1.5rem 0;
+  padding: 1.25rem 0;
 }
 .main-nav a {
   font-size: 0.8rem;
@@ -70,6 +69,7 @@
   letter-spacing: 0.1em;
   font-weight: 500;
   position: relative;
+  white-space: nowrap;
 }
 .main-nav a::after {
   content: '';
@@ -81,11 +81,24 @@
   background-color: var(--accent-gold);
   transition: width var(--transition-smooth);
 }
-.main-nav a:hover::after {
-  width: 100%;
-}
+.main-nav a:hover::after { width: 100%; }
+
 @media (max-width: 768px) {
   .header-meta { display: none; }
-  .top-bar-content { flex-direction: column; gap: 0.5rem; text-align: center; }
-  .main-nav { flex-wrap: wrap; gap: 1.5rem; }
+  .top-bar-content { 
+    flex-direction: column; 
+    gap: 0.5rem; 
+    text-align: center; 
+  }
+  .top-bar-content span:not(.top-bar-center) { display: none; }
+  /* Modern mobile horizontal scroll for nav */
+  .main-nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    gap: 2rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .main-nav::-webkit-scrollbar { display: none; }
 }
